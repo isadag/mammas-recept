@@ -1,5 +1,12 @@
 const recipes = [
   {
+    id: "kakor",
+    title: "Småkakor",
+    category: "Fika",
+    image: "images/food.png",
+    markdown: "recipes/kakor.md"
+  },
+  {
     id: "gabola",
     title: "Serbdow (gabola)",
     category: "Huvudrätt",
@@ -12,12 +19,5 @@ const recipes = [
     category: "Huvudrätt",
     image: "images/food.png",
     markdown: "recipes/rovi.md"
-  },
-  {
-    id: "kakor",
-    title: "Småkakor",
-    category: "Fika",
-    image: "images/food.png",
-    markdown: "recipes/kakor.md"
-  }
+  }  
 ];
