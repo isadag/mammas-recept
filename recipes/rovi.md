@@ -1,13 +1,14 @@
 # Pancakes
 
-## Ingredients
-- Flour
-- Milk
-- Eggs
-- Sugar
-- Baking powder
+## Ingredienser
+- X
+- X
+- X
 
-## Steps
-1. Mix ingredients
-2. Heat pan
-3. Cook until golden
+## Instruktioner
+1. Gör X
+2. Gör Y
+3. Gör <strong>Z</strong>
+
+## Övrigt
+* Test
