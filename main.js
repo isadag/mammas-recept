@@ -33,8 +33,6 @@ toggle?.addEventListener("click", () => {
   );
 });
 
-
-
 // Recipes list page
 const list = document.getElementById("list");
 const search = document.getElementById("search");
