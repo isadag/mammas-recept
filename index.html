@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  <title>Recipes</title>
+  <title>Mammas recept</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
-  <h2>🍲 Recept</h2>
+<h2><a href="index.html">🍲 Mammas recept</a></h2>
   <ul>
-    <li><a href="index.html">Start</a></li>
+    <!-- <li><a href="index.html">Start</a></li> -->
     <li><button id="darkToggle" aria-label="Toggle dark mode"></button></li>
   </ul>
 </nav>
@@ -18,9 +19,9 @@
 <main>
   <input id="search" placeholder="Search recipes...">
   <select id="category">
-    <option value="">All categories</option>
-    <option>Dinner</option>
-    <option>Breakfast</option>
+    <option value="">Alla kategorier</option>
+    <option>Huvudrätt</option>
+    <option>Fika</option>
   </select>
 
   <div id="list"></div>

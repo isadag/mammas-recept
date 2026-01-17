@@ -1,14 +1,11 @@
-# Spaghetti Carbonara
+# Serbdow (gabola)
 
-## Ingredients
-- Spaghetti
-- Eggs
-- Pancetta
-- Parmesan
-- Black pepper
+## Ingredienser
+- X
+- X
+- X
 
-## Steps
-1. Cook the pasta
-2. Fry pancetta
-3. Mix eggs and cheese
-4. Combine everything
+## Instruktioner
+1. Gör X
+2. Gör Y
+3. Gör <strong>Z</strong>
