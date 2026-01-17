@@ -195,10 +195,11 @@ article {
 }
 
 article img {
-  width: 100%;
+  /* width: 100%; */
   /* max-height: 320px; */
   object-fit: cover;
   border-radius: 6px;
+  margin: 0 auto;
   margin-bottom: 1rem;
 }
 

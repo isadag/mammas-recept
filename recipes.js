@@ -3,8 +3,15 @@ const recipes = [
     id: "kakor",
     title: "Småkakor",
     category: "Fika",
-    image: "images/food.png",
+    image: "images/empty.png",
     markdown: "recipes/kakor.md"
+  },
+  {
+    id: "vattenmelonfron",
+    title: "Frön (vattenmelon)",
+    category: "Fika",
+    image: "images/frön.jpg",
+    markdown: "recipes/vattenmelonfron.md"
   },
   {
     id: "gabola",
@@ -14,10 +21,10 @@ const recipes = [
     markdown: "recipes/gabola.md"
   },
   {
-    id: "rovi",
-    title: "Rovi",
+    id: "naneshilik",
+    title: "Nane shilik (dawqe)",
     category: "Huvudrätt",
-    image: "images/food.png",
-    markdown: "recipes/rovi.md"
-  }  
+    image: "images/empty.png",
+    markdown: "recipes/naneshilik.md"
+  }
 ];
