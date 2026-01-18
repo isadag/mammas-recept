@@ -199,7 +199,7 @@ nav a:hover {
 ========================= */
 
 .theme-toggle {
-  width: 60px;
+  width: 75px;
   height: 34px;
   padding: 0;
   border: none;
@@ -223,8 +223,8 @@ nav a:hover {
   padding: 0 7px;
   box-sizing: border-box;
   transition:
-    background-color 200ms ease,
-    border-color 200ms ease;
+    background-color 100ms ease,
+    border-color 100ms ease;
 }
 
 /* Thumb */
@@ -238,7 +238,7 @@ nav a:hover {
   border-radius: 50%;
   box-shadow:
     0 2px 6px rgba(0, 0, 0, 0.45);
-  transition: transform 200ms ease;
+  transition: transform 100ms ease;
 }
 
 /* Icons */
@@ -258,7 +258,7 @@ body.dark .toggle-track {
 }
 
 body.dark .toggle-thumb {
-  transform: translateX(24px);
+  transform: translateX(40px);
 }
 
 /* Hover & active */
@@ -281,7 +281,7 @@ body.dark .toggle-thumb {
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .toggle-thumb {
-    transition: none;
+    /* transition: none; */
   }
 }
 
