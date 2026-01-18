@@ -151,15 +151,6 @@ img {
 ========================================================= */
 
 nav {
-  /* --text: #fff;
-  background: var(--nav-bg);
-  color: var(--text);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  transition: var(--theme-transition);
-  width: 100%; */
   --text: #fff;
   color: var(--text);
   transition: var(--theme-transition);
