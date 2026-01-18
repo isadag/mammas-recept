@@ -151,7 +151,7 @@ img {
 ========================================================= */
 
 nav {
-  --text: #fff;
+  /* --text: #fff;
   background: var(--nav-bg);
   color: var(--text);
   display: flex;
@@ -159,6 +159,15 @@ nav {
   align-items: center;
   padding: 1rem;
   transition: var(--theme-transition);
+  width: 100%; */
+  --text: #fff;
+  color: var(--text);
+  transition: var(--theme-transition);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 1rem;
+  background: var(--nav-bg);
 }
 
 nav ul {
@@ -178,6 +187,10 @@ nav button {
   cursor: pointer;
   font-size: 1.4rem;
   text-decoration: none;
+}
+
+nav h2 {
+  margin-left: 2rem;
 }
 
 nav a:hover {
