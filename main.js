@@ -106,6 +106,7 @@ category && (category.onchange = filterRecipes);
 // Recipe detail page
 // ===============================
 const article = document.getElementById("recipe");
+const SKELETON_DELAY = 500;
 
 if (article) {
   const id = location.hash.replace("#", "");
@@ -118,7 +119,7 @@ if (article) {
     if (!recipe) {
       article.innerHTML = "<p>❌ Recipe not found.</p>";
     } else {
-      // Skeleton
+      // Show skeleton immediately
       article.innerHTML = `
         <div class="skeleton skeleton-article">
           <div class="skeleton skeleton-img"></div>
@@ -128,25 +129,29 @@ if (article) {
         </div>
       `;
 
-      fetch(`${recipe.markdown}?v=${VERSION}`)
-        .then(res => {
-          if (!res.ok) throw new Error("Failed to load markdown");
-          return res.text();
-        })
-        .then(md => {
-          article.classList.add("fade-in");
-          article.innerHTML = `
-            <img src="${recipe.image}?v=${VERSION}" loading="lazy" alt="${recipe.title}">
-            ${parseMarkdown(md)}
-          `;
-        })
-        .catch(err => {
-          console.error(err);
-          article.innerHTML = "<p>❌ Failed to load recipe.</p>";
-        });
+      // Fixed delay before loading content
+      setTimeout(() => {
+        fetch(`${recipe.markdown}?v=${VERSION}`)
+          .then(res => {
+            if (!res.ok) throw new Error("Failed to load markdown");
+            return res.text();
+          })
+          .then(md => {
+            article.classList.add("fade-in");
+            article.innerHTML = `
+              <img src="${recipe.image}?v=${VERSION}" loading="lazy" alt="${recipe.title}">
+              ${parseMarkdown(md)}
+            `;
+          })
+          .catch(err => {
+            console.error(err);
+            article.innerHTML = "<p>❌ Failed to load recipe.</p>";
+          });
+      }, SKELETON_DELAY);
     }
   }
 }
+
 
 // ===============================
 // Footer version display
