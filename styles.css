@@ -288,3 +288,14 @@ button:hover {
   border: 3px solid var(--border-color, #ccc);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
+
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+
+body.dark footer {
+  opacity: 0.4;
+}
