@@ -121,7 +121,7 @@ if (article) {
     } else {
       // Show skeleton immediately
       article.innerHTML = `
-        <div class="skeleton skeleton-article">
+        <div class="recipe-skeleton skeleton skeleton-article">
           <div class="skeleton skeleton-img"></div>
           <div class="skeleton skeleton-text long"></div>
           <div class="skeleton skeleton-text long"></div>

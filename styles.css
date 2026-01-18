@@ -275,6 +275,10 @@ button {
    7. RECIPE DETAIL PAGE
 ========================================================= */
 
+.recipe-skeleton {
+  min-height: 600px;
+}
+
 article {
   animation: fadeInUp 300ms ease both;
   min-height: 600px;
@@ -384,4 +388,8 @@ footer {
 
 body.dark footer {
   opacity: 0.4;
+}
+
+.hidden {
+  display: none;
 }
