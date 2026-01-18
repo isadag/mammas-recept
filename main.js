@@ -96,7 +96,7 @@ if (list) {
   // Slight delay so skeleton is visible even with local data
   setTimeout(() => {
     renderList(recipes);
-  }, 600);
+  }, 300);
 }
 
 search && (search.oninput = filterRecipes);
@@ -106,7 +106,7 @@ category && (category.onchange = filterRecipes);
 // Recipe detail page
 // ===============================
 const article = document.getElementById("recipe");
-const SKELETON_DELAY = 500;
+const SKELETON_DELAY = 300;
 
 if (article) {
   const id = location.hash.replace("#", "");
