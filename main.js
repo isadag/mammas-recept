@@ -140,7 +140,7 @@ if (article) {
             article.classList.add("fade-in");
             article.innerHTML = `
               <div style="min-height: 400px"><img src="${recipe.image}?v=${VERSION}" loading="lazy" alt="${recipe.title}"></div>
-              ${parseMarkdown(md)}
+              ${parseMarkdown(md)}`;
           })
           .catch(err => {
             console.error(err);
