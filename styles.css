@@ -22,6 +22,10 @@
     background-color 250ms ease,
     color 250ms ease,
     border-color 250ms ease;
+
+  /* Skeleton Loader */
+  --skeleton-bg: #e2e2e2;
+  --skeleton-highlight: #f5f5f5;
 }
 
 /* Dark theme overrides */
@@ -35,7 +39,87 @@ body.dark {
   --muted-text: #aaa;
 
   --shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+
+  --skeleton-bg: #2a2a2a;
+  --skeleton-highlight: #3a3a3a;
 }
+
+/* Skeleton */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--skeleton-bg);
+ unnable {
+    background-position: -200% 0;
+  }
+}
+
+/* Shimmer animation */
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--skeleton-highlight),
+    transparent
+  );
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Skeleton blocks */
+.skeleton-img {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+}
+
+.skeleton-text {
+  height: 14px;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+}
+
+.skeleton-text.short {
+  width: 60%;
+}
+
+.skeleton-text.long {
+  width: 90%;
+}
+
+.skeleton-card {
+  padding: 1rem;
+}
+
+/* =========================
+   Recipe page skeleton
+========================= */
+
+.skeleton-article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-article .skeleton-img {
+  height: 240px;
+}
+
+.skeleton-article .skeleton-text {
+  height: 16px;
+}
+
 
 /* =========================================================
    2. GLOBAL BASE STYLES
