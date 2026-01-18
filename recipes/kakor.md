@@ -1,11 +1,11 @@
 # Småkakor med marmelad
 
 ## Ingredienser
-- 500g margarin
+- 500 gram margarin
 - 5 ägg
 - 2 skedar vaniljsocker
 - 2 skedar bakpulver
-- 400g florsocker
+- 400 gram florsocker
 - Jordgubbsmarmelad (att bre på mellan två kakor)
 
 ## Instruktioner
