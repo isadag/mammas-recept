@@ -139,7 +139,7 @@ if (article) {
           .then(md => {
             article.classList.add("fade-in");
             article.innerHTML = `
-              <div style="min-height: 300px"><img src="${recipe.image}?v=${VERSION}" loading="lazy" alt="${recipe.title}"></div>
+              <div style="min-height: 400px"><img src="${recipe.image}?v=${VERSION}" loading="lazy" alt="${recipe.title}"></div>
               ${parseMarkdown(md)}
             `;
           })
