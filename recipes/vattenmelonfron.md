@@ -1,7 +1,7 @@
 # Frön, bzar'o, çekirdek, dendik (vattenmelon)
 
 ## Ingredienser
-- 2kg frön
+- 2 kg frön
 - 10 liter vatten
 - 5 msk bikarbonat
 
