@@ -15,14 +15,14 @@ const recipes = [
   },
   {
     id: "gabola",
-    title: "Serbdow (gabola)",
+    title: "Serbdow / gabola",
     category: "Huvudrätt",
     image: "images/gabola.jpg",
     markdown: "recipes/gabola.md"
   },
   {
     id: "naneshilik",
-    title: "Nane shilik (dawqe)",
+    title: "Nane shilik / dawqe",
     category: "Huvudrätt",
     image: "images/empty.png",
     markdown: "recipes/naneshilik.md"
