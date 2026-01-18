@@ -1,4 +1,4 @@
-# Småkakor med sylt
+# Småkakor med marmelad
 
 ## Ingredienser
 - 500g margarin

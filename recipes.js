@@ -1,14 +1,14 @@
 const recipes = [
   {
     id: "kakor",
-    title: "Småkakor",
+    title: "Småkakor med marmelad",
     category: "Fika",
     image: "images/empty.png",
     markdown: "recipes/kakor.md"
   },
   {
     id: "vattenmelonfron",
-    title: "Frön (vattenmelon)",
+    title: "Frön, bzar'o, çekirdek, dendik (vattenmelon)",
     category: "Fika",
     image: "images/frön.jpg",
     markdown: "recipes/vattenmelonfron.md"

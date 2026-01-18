@@ -1,4 +1,4 @@
-# Frön (vattenmelon)
+# Frön, bzar'o, çekirdek, dendik (vattenmelon)
 
 ## Ingredienser
 - 2kg frön
