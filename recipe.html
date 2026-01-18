@@ -31,11 +31,13 @@
       <span id="version"></span>
     </p>
   </footer>
-  <script src="version.js"></script>
-  <script src="recipes.js"></script>
-  <script src="markdown.js"></script>
-  <script src="main.js"></script>
-
+  <script>
+    const v = Date.now();
+    window.APP_VERSION = v;
+    document.write(`<script src="recipes.js?v=${v}"><\/script>`);
+    document.write(`<script src="markdown.js?v=${v}"><\/script>`);
+    document.write(`<script src="main.js?v=${v}"><\/script>`);
+  </script>
 
 </body>
 
