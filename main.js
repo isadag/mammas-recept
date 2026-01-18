@@ -21,9 +21,12 @@ function applyTheme(theme) {
 
 function updateThemeIcon() {
   if (!toggle) return;
-  toggle.textContent =
-    document.body.classList.contains("dark") ? "☀️" : "🌚";
+  toggle.setAttribute(
+    "aria-pressed",
+    document.body.classList.contains("dark")
+  );
 }
+
 
 applyTheme(getPreferredTheme());
 
