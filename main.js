@@ -141,7 +141,6 @@ if (article) {
             article.innerHTML = `
               <div style="min-height: 400px"><img src="${recipe.image}?v=${VERSION}" loading="lazy" alt="${recipe.title}"></div>
               ${parseMarkdown(md)}
-            k l
           })
           .catch(err => {
             console.error(err);
