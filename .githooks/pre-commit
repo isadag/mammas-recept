@@ -1,0 +1,4 @@
+#!/bin/sh
+VERSION=$(git rev-parse --short HEAD)
+echo "window.APP_VERSION = \"$VERSION\";" > version.js
+git add version.js
