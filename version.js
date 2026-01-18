@@ -1,2 +1,1 @@
-// version.js
-window.APP_VERSION = "dev";
+window.APP_VERSION = "825f1dc";

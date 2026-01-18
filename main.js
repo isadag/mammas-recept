@@ -122,5 +122,6 @@ if (article) {
 // ===============================
 const footerVersion = document.getElementById("version");
 if (footerVersion) {
-  footerVersion.textContent = `v${VERSION}`;
+  footerVersion.textContent =
+  VERSION === "dev" ? "dev" : `v${VERSION}`;
 }
