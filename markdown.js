@@ -1,77 +1,20 @@
-// function parseMarkdown(md) {
-//   return md
-//     .replace(/^# (.*$)/gim, "<h1>$1</h1>")
-//     .replace(/^## (.*$)/gim, "<h2>$1</h2>")
-//     .replace(/^\- (.*$)/gim, "<li>$1</li>")
-//     .replace(/(<li>.*<\/li>)/gims, "<ul>$1</ul>")
-//     .replace(/^\d+\. (.*$)/gim, "<li>$1</li>")
-//     .replace(/\n/g, "<br>");
-// }
-
 function parseMarkdown(md) {
-  const lines = md.split("\n");
-  let html = "";
-  let inUl = false;
-  let inOl = false;
+  let html = md;
 
-  for (let line of lines) {
-    // Headings
-    if (/^## /.test(line)) {
-      closeLists();
-      html += `<h2>${line.replace(/^## /, "")}</h2>`;
-      continue;
-    }
+  // Headings
+  html = html.replace(/^# (.*)$/gim, "<h1>$1</h1>");
+  html = html.replace(/^## (.*)$/gim, "<h2>$1</h2>");
 
-    if (/^# /.test(line)) {
-      closeLists();
-      html += `<h1>${line.replace(/^# /, "")}</h1>`;
-      continue;
-    }
+  // Unordered list
+  html = html.replace(/(?:^|\n)- (.*)/g, "<li>$1</li>");
+  html = html.replace(/(<li>.*<\/li>)/gs, "<ul>$1</ul>");
 
-    // Ordered list
-    if (/^\d+\. /.test(line)) {
-      if (!inOl) {
-        closeLists();
-        html += "<ol>";
-        inOl = true;
-      }
-      html += `<li>${line.replace(/^\d+\. /, "")}</li>`;
-      continue;
-    }
+  // Ordered list (KEY FIX)
+  html = html.replace(/(?:^|\n)\d+\. (.*)/g, "<li>$1</li>");
+  html = html.replace(/(<li>.*<\/li>)/gs, "<ol>$1</ol>");
 
-    // Unordered list
-    if (/^- /.test(line)) {
-      if (!inUl) {
-        closeLists();
-        html += "<ul>";
-        inUl = true;
-      }
-      html += `<li>${line.replace(/^- /, "")}</li>`;
-      continue;
-    }
+  // Line breaks
+  html = html.replace(/\n/g, "<br>");
 
-    // Empty line
-    if (line.trim() === "") {
-      closeLists();
-      continue;
-    }
-
-    // Paragraph / raw HTML
-    closeLists();
-    html += `<p>${line}</p>`;
-  }
-
-  closeLists();
   return html;
-
-  function closeLists() {
-    if (inUl) {
-      html += "</ul>";
-      inUl = false;
-    }
-    if (inOl) {
-      html += "</ol>";
-      inOl = false;
-    }
-  }
 }

@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Recipe</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-profile-container"><img class="profile" src="images/mamma.jpg"/></div>
-  <h2><a href="index.html">Mammas recept</a></h2>
-  <ul>
-    <!-- <li><a href="index.html">Start</a></li> -->
-    <li><button id="darkToggle" aria-label="Toggle dark mode" style="margin-top: 12px;"></button></li>
-  </ul>
-</nav>
+  <nav>
+    <div class="nav-profile-container"><img class="profile" src="images/mamma.jpg" /></div>
+    <h2><a href="index.html">Mammas recept</a></h2>
+    <ul>
+      <!-- <li><a href="index.html">Start</a></li> -->
+      <li><button id="darkToggle" aria-label="Toggle dark mode" style="margin-top: 12px;"></button></li>
+    </ul>
+  </nav>
 
-<main>
-  <a href="index.html"><button>Tillbaka till lista</button></a>
-  <article id="recipe"></article>
-  <!-- <button onclick="window.print()">🖨 Print</button> -->
-   <div class="profile-container"><img class="profile" src="images/mamma.jpg"/></div>
-</main>
+  <main>
+    <a href="index.html"><button>Tillbaka till lista</button></a>
+    <article id="recipe"></article>
+    <!-- <button onclick="window.print()">🖨 Print</button> -->
+    <div class="profile-container"><img class="profile" src="images/mamma.jpg" /></div>
+  </main>
 
-<script src="recipes.js"></script>
-<script src="markdown.js"></script>
-<script src="main.js"></script>
+  <!-- <script>
+  const v = Date.now();
+  document.write(`<script src="recipes.js?v=${v}"><\/script>`);
+  document.write(`<script src="markdown.js?v=${v}"><\/script>`);
+  document.write(`<script src="main.js?v=${v}"><\/script>`);
+</script> -->
+  <script src="version.js"></script>
+  <script src="recipes.js"></script>
+  <script src="markdown.js"></script>
+  <script src="main.js"></script>
+  <footer>
+    <span id="version"></span>
+  </footer>
+
 </body>
+
 </html>

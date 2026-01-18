@@ -1,3 +1,6 @@
+// ===============================
+// Theme handling
+// ===============================
 const toggle = document.getElementById("darkToggle");
 
 function getPreferredTheme() {
@@ -7,7 +10,6 @@ function getPreferredTheme() {
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     return "dark";
   }
-
   return "light";
 }
 
@@ -23,17 +25,22 @@ function updateThemeIcon() {
     document.body.classList.contains("dark") ? "☀️" : "🌙";
 }
 
-// Initialize
 applyTheme(getPreferredTheme());
 
-// User toggle
 toggle?.addEventListener("click", () => {
   applyTheme(
     document.body.classList.contains("dark") ? "light" : "dark"
   );
 });
 
+// ===============================
+// Version
+// ===============================
+const VERSION = window.APP_VERSION || "dev";
+
+// ===============================
 // Recipes list page
+// ===============================
 const list = document.getElementById("list");
 const search = document.getElementById("search");
 const category = document.getElementById("category");
@@ -41,10 +48,11 @@ const category = document.getElementById("category");
 function renderList(items) {
   if (!list) return;
   list.innerHTML = "";
+
   items.forEach(r => {
     list.innerHTML += `
-      <a class="card" href="recipe.html#${r.id}">
-        <img src="${r.image}" loading="lazy">
+      <a class="card fade-in" href="recipe.html#${r.id}">
+        <img src="${r.image}?v=${VERSION}" loading="lazy">
         <h3>${r.title}</h3>
         <p>${r.category}</p>
       </a>
@@ -53,19 +61,23 @@ function renderList(items) {
 }
 
 function filterRecipes() {
+  if (!search || !category) return;
+
   const q = search.value.toLowerCase();
   const c = category.value;
 
-  renderList(recipes.filter(r =>
-    (!c || r.category === c) &&
-    r.title.toLowerCase().includes(q)
-  ));
+  renderList(
+    recipes.filter(r =>
+      (!c || r.category === c) &&
+      r.title.toLowerCase().includes(q)
+    )
+  );
 }
 
 search && (search.oninput = filterRecipes);
 category && (category.onchange = filterRecipes);
 
-renderList(recipes);
+list && renderList(recipes);
 
 // ===============================
 // Recipe detail page
@@ -77,30 +89,38 @@ if (article) {
 
   if (!id) {
     article.innerHTML = "<p>❌ No recipe selected.</p>";
-    throw new Error("No recipe id in URL");
-  }
+  } else {
+    const recipe = recipes.find(r => r.id === id);
 
-  console.log(recipes);
-  const recipe = recipes.find(r => r.id === id);
-  console.log(recipe);
-  if (!recipe) {
-    article.innerHTML = "<p>❌ Recipe not found.</p>";
-    throw new Error("Recipe not found: " + id);
-  }
+    if (!recipe) {
+      article.innerHTML = "<p>❌ Recipe not found.</p>";
+    } else {
+      article.innerHTML = `<div class="skeleton skeleton-article"></div>`;
 
-  fetch(recipe.markdown)
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to load markdown");
-      return res.text();
-    })
-    .then(md => {
-      article.innerHTML = `
-        <img src="${recipe.image}" alt="${recipe.title}" loading="lazy">
-        ${parseMarkdown(md)}
-      `;
-    })
-    .catch(err => {
-      article.innerHTML = "<p>❌ Failed to load recipe.</p>";
-      console.error(err);
-    });
+      fetch(`${recipe.markdown}?v=${VERSION}`)
+        .then(res => {
+          if (!res.ok) throw new Error("Markdown fetch failed");
+          return res.text();
+        })
+        .then(md => {
+          article.classList.add("fade-in");
+          article.innerHTML = `
+            <img src="${recipe.image}?v=${VERSION}" loading="lazy">
+            ${parseMarkdown(md)}
+          `;
+        })
+        .catch(err => {
+          console.error(err);
+          article.innerHTML = "<p>❌ Failed to load recipe.</p>";
+        });
+    }
+  }
+}
+
+// ===============================
+// Footer version display
+// ===============================
+const footerVersion = document.getElementById("version");
+if (footerVersion) {
+  footerVersion.textContent = `v${VERSION}`;
 }
