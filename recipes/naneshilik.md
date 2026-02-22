@@ -13,5 +13,5 @@
 
 <div style="margin-top: 50px;">
 <i>Mamma gör nane shilik</strong>
-<img src="../images/Mamma_gör_dawqe.jpg" style="max-width:300px"/>
+<img src="images/Mamma_gör_dawqe.jpg" style="max-width:300px"/>
 </div>

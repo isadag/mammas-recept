@@ -12,16 +12,17 @@
 ## Instruktioner
 1. Sätt på ugnen på 150-170°
 2. Vispa smöret med elvisp och knäck i ett ägg i taget
-3. Häll i vaniljsocker och bakpulver sist och vispa
-4. Fyll kakpressen med degen
-5. Pressa ut önskade former
-6. In i ugnen ett par minuter
-7. Bre på jordgubbsmarmelad och sätt ihop två kakor medan de är varma
+3. Ha i vetemjöl och fortsätt vispa och röra om
+4. Häll i vaniljsocker och bakpulver sist och vispa
+5. Fyll kakpressen med degen
+6. Pressa ut önskade former
+7. In i ugnen ett par minuter
+8. Bre på jordgubbsmarmelad och sätt ihop två kakor medan de är varma
 
 
 <br />
 <h3>Tips från Lucia och Isa</h3>
-När vi gjorde detta recept halverade vi dosen vid ett första försök och hade i följande:
+När vi gjorde detta recept halverade vi mängderna vid ett första försök och hade i följande:
 - 250 gram smör
 - 3 ägg
 - 200 gram florsocker (ca 3,5 dl)
@@ -31,5 +32,5 @@ När vi gjorde detta recept halverade vi dosen vid ett första försök och hade
 
 <div style="margin-top: 50px;">
 <i>Lucia gör kakorna, här klickas de ut med kakpressen med denna form:</strong>
-<img src="../images/kakor_marmelad1.jpg" style="max-width:300px"/>
+<img src="images/kakor_marmelad1.jpg" style="max-width:300px"/>
 </div>
