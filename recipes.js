@@ -10,7 +10,7 @@ const recipes = [
     id: "kakor",
     title: "Småkakor med marmelad",
     category: "Fika",
-    image: "images/empty.png",
+    image: "images/kakor_marmelad2.jpg",
     markdown: "recipes/kakor.md"
   },
   {

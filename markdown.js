@@ -1,30 +1,22 @@
-// function parseMarkdown(md) {
-//   return md
-//     .replace(/^# (.*$)/gim, "<h1>$1</h1>")
-//     .replace(/^## (.*$)/gim, "<h2>$1</h2>")
-//     .replace(/^\- (.*$)/gim, "<li>$1</li>")
-//     .replace(/(<li>.*<\/li>)/gims, "<ul>$1</ul>")
-//     .replace(/^\d+\. (.*$)/gim, "<li>$1</li>")
-//     .replace(/\n/g, "<br>");
-// }
-
 function parseMarkdown(md) {
   const lines = md.split("\n");
   let html = "";
   let inUl = false;
   let inOl = false;
 
-  for (let line of lines) {
+  for (let rawLine of lines) {
+    const line = rawLine.trim();
+
     // Headings
-    if (/^## /.test(line)) {
+    if (line.startsWith("## ")) {
       closeLists();
-      html += `<h2>${line.replace(/^## /, "")}</h2>`;
+      html += `<h2>${line.slice(3)}</h2>`;
       continue;
     }
 
-    if (/^# /.test(line)) {
+    if (line.startsWith("# ")) {
       closeLists();
-      html += `<h1>${line.replace(/^# /, "")}</h1>`;
+      html += `<h1>${line.slice(2)}</h1>`;
       continue;
     }
 
@@ -40,18 +32,18 @@ function parseMarkdown(md) {
     }
 
     // Unordered list
-    if (/^- /.test(line)) {
+    if (line.startsWith("- ")) {
       if (!inUl) {
         closeLists();
         html += "<ul>";
         inUl = true;
       }
-      html += `<li>${line.replace(/^- /, "")}</li>`;
+      html += `<li>${line.slice(2)}</li>`;
       continue;
     }
 
     // Empty line
-    if (line.trim() === "") {
+    if (line === "") {
       closeLists();
       continue;
     }

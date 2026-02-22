@@ -141,6 +141,7 @@ if (article) {
           })
           .then(md => {
             article.classList.add("fade-in");
+            console.log(recipe.image);
             article.innerHTML = `
               <div style="min-height: 400px"><img src="${recipe.image}?v=${VERSION}" loading="lazy" alt="${recipe.title}"></div>
               ${parseMarkdown(md)}`;

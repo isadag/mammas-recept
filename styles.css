@@ -376,14 +376,21 @@ article {
   min-height: 600px;
 }
 
-article img {
-  /* width: 100%; */
-  /* max-height: 320px; */
+/* article img {
   object-fit: cover;
   border-radius: 6px;
   margin: 0 auto;
   margin-bottom: 1rem;
+} */
+
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 8px;
 }
+
 
 /* =========================================================
    8. BUTTONS
